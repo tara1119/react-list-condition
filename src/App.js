@@ -12,9 +12,17 @@ function App() {
     randTextState(event.target.value);
   }
 
+  const deleteTextState = (index) => {
+    const text = randtext.split('');
+    text.splice(index,1);
+    const updatedText = text.join('');
+    randTextState(updatedText);
+  }
+
   const charList = randtext.split('').map((ch, index) => {
-    return <CharList character={ch} key={index} />
+    return <CharList character={ch} key={index} delete={() => deleteTextState(index)} />
   })
+
   return (
 
     <div className="App">

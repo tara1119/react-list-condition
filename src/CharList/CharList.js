@@ -9,7 +9,7 @@ const charList = (props) => {
        border: '1px solid black',
    }
    return (
-    <div style={style}>
+    <div style={style} onClick={props.delete}>
         {props.character}
     </div>
    );
